@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget. *;
 
+import java.math.BigDecimal;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -37,6 +39,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtResult;
     private TextView txtInput;
 
+    BigDecimal valueOne;
+    BigDecimal valueTwo;
+    BigDecimal result;
+    char operator;
+
+    private final char ADDITION = '+';
+    private final char SUBTRACTION = '-';
+    private final char MULTIPLICATION = '*';
+    private final char DIVISION = '/';
+    private final char EQUAL = '=';
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,78 +58,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         createObjectsVariables();
-       /* btnZero.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnZero.getText());
-            }
-        }); */
-        btnOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnOne.getText());
-            }
-        });
-        btnTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnTwo.getText());
-            }
-        });
-        btnThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnThree.getText());
-            }
-        });
-        btnFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnFour.getText());
-            }
-        });
-        btnFive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnFive.getText());
-            }
-        });
-        btnSix.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnSix.getText());
-            }
-        });
-        btnSeven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnSeven.getText());
-            }
-        });
-        btnEight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnEight.getText());
-            }
-        });
-        btnNine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.append(btnNine.getText());
-            }
-        });
-        btnClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtInput.setText(null);
-            }
-        });
+        valueOne = new BigDecimal("") ;
+        valueTwo = new BigDecimal("") ;
+        result = new BigDecimal("");
 
-    }
 
-    public void checkButtonClock(View V){
-        String id = (btnZero.getResources().getResourceName(btnZero.getId())).split("/")[1];
-        txtInput.append(id);
     }
 
     private void createObjectsVariables(){
@@ -143,6 +90,108 @@ public class MainActivity extends AppCompatActivity {
         txtResult = (TextView) findViewById(R.id.txtResult);
         txtInput = (TextView) findViewById(R.id.txtInput);
 
+    }
+
+    public void btnZeroonClick(View v) {
+        txtInput.append(btnZero.getText());
+    }
+    public void btnOneOnClick(View v) {
+        txtInput.append(btnOne.getText());
+    }
+    public void btnTwoOnClick(View v) {
+        txtInput.append(btnTwo.getText());
+    }
+    public void btnThreeOnClick(View v) {
+        txtInput.append(btnThree.getText());
+    }
+    public void btnFourOnClick(View v) {
+        txtInput.append(btnFour.getText());
+    }
+    public void btnFiveOnClick(View v) {
+        txtInput.append(btnFive.getText());
+    }
+    public void btnSixOnClick(View v) {
+        txtInput.append(btnSix.getText());
+    }
+    public void btnSevenOnClick(View v) {
+        txtInput.append(btnSeven.getText());
+    }
+    public void btnEightOnClick(View v) {
+        txtInput.append(btnEight.getText());
+    }
+    public void btnNineOnClick(View v) {
+        txtInput.append(btnNine.getText());
+    }
+
+    //Caluclation Buttons.
+    public void BtnAdditoinOnClick(View v){
+        calculations();
+    }
+    public void BtnSubtractionOnClick(View v){
+        calculations();
+    }
+    public void BtnMultiplicationOnClick(View v){
+        calculations();
+    }
+    public void BtnDivisionOnClick(View v){
+        calculations();
+    }
+
+    public void BtnEqualOnClick(View v){
+        calculations();
+    }
+    public void BtnSignClick(View v){
+        calculations();
+    }
+    public void BtnDecimalOnClick(View v){
+        calculations();
+    }
+    public void BtnSqrtOnClick(View v){
+        calculations();
+    }
+    public void BtnModulasOnClick(View v){
+        calculations();
+    }
+    public void BtnClearOnClick(View v){
+        txtInput.setText("0");
+        txtResult.setText(null);
+        valueOne = new BigDecimal("") ;
+        valueTwo = new BigDecimal("") ;
+        result = new BigDecimal("");
+
+    }
+
+    public void calculations(){
+
+
+        switch(operator){
+            case ADDITION:
+                valueOne = valueOne.add(valueTwo);
+                txtResult.setText(valueOne.toString());
+                txtInput.setText(Character.toString(ADDITION));
+                break;
+            case SUBTRACTION:
+                valueOne = valueOne.subtract(valueTwo);
+                txtResult.setText(valueOne.toString());;
+                txtInput.setText(Character.toString(SUBTRACTION));
+                break;
+            case MULTIPLICATION:
+                valueOne = valueOne.multiply(valueTwo);
+                txtResult.setText(valueOne.toString());
+                txtInput.setText(Character.toString(MULTIPLICATION));
+                break;
+            case DIVISION:
+                valueOne = valueOne.divide(valueTwo);
+                txtResult.setText(valueOne.toString());
+                txtInput.setText(Character.toString(DIVISION));
+                break;
+            case EQUAL:
+                txtResult.setText(valueOne.toString());
+                txtInput.setText(null);
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
