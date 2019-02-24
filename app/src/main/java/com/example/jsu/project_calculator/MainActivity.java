@@ -39,18 +39,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtResult;
     private TextView txtInput;
 
-    BigDecimal valueOne;
-    BigDecimal valueTwo;
-    BigDecimal result;
+    private double  valueOne;
+    private double valueTwo;
     char operator;
 
-    private final char ADDITION = '+';
-    private final char SUBTRACTION = '-';
-    private final char MULTIPLICATION = '*';
-    private final char DIVISION = '/';
-    private final char EQUAL = '=';
-
-
+    boolean add,sub,div,mul,sqrt,modulas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         createObjectsVariables();
-        valueOne = new BigDecimal("") ;
-        valueTwo = new BigDecimal("") ;
-        result = new BigDecimal("");
+        valueOne = 0;
+        valueTwo = 0 ;
 
 
     }
@@ -93,75 +85,115 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnZeroonClick(View v) {
-        txtInput.append(btnZero.getText());
+        txtInput.setText(txtInput.getText()+"0");
     }
     public void btnOneOnClick(View v) {
-        txtInput.append(btnOne.getText());
+        txtInput.setText(txtInput.getText()+"1");
     }
     public void btnTwoOnClick(View v) {
-        txtInput.append(btnTwo.getText());
+        txtInput.setText(txtInput.getText()+"2");
     }
     public void btnThreeOnClick(View v) {
-        txtInput.append(btnThree.getText());
+        txtInput.setText(txtInput.getText()+"3");
     }
     public void btnFourOnClick(View v) {
-        txtInput.append(btnFour.getText());
+        txtInput.setText(txtInput.getText()+"4");
     }
     public void btnFiveOnClick(View v) {
-        txtInput.append(btnFive.getText());
+        txtInput.setText(txtInput.getText()+"5");
     }
     public void btnSixOnClick(View v) {
-        txtInput.append(btnSix.getText());
+        txtInput.setText(txtInput.getText()+"6");
     }
     public void btnSevenOnClick(View v) {
-        txtInput.append(btnSeven.getText());
+        txtInput.setText(txtInput.getText()+"7");
     }
     public void btnEightOnClick(View v) {
-        txtInput.append(btnEight.getText());
+        txtInput.setText(txtInput.getText()+"8");
     }
     public void btnNineOnClick(View v) {
-        txtInput.append(btnNine.getText());
+        txtInput.setText(txtInput.getText()+"9");
+    }
+    public void BtnDecimalOnClick(View v){
+        txtInput.setText(txtInput.getText()+".");
+
+    }
+    public void BtnSignClick(View v){
+
     }
 
     //Caluclation Buttons.
     public void BtnAdditoinOnClick(View v){
-        calculations();
+        valueOne = Double.parseDouble(txtInput.getText() + "");
+        add=true;
+        txtInput.setText(null);
+        txtResult.append(String.valueOf(valueOne)+ "+");
     }
     public void BtnSubtractionOnClick(View v){
-        calculations();
+        valueOne = Double.parseDouble(txtInput.getText() + "");
+        sub=true;
+        txtInput.setText(null);
+        txtResult.append(String.valueOf(valueOne)+"-");
     }
     public void BtnMultiplicationOnClick(View v){
-        calculations();
+        valueOne = Double.parseDouble(txtInput.getText() + "");
+        mul=true;
+        txtInput.setText(null);
+        txtResult.append(String.valueOf(valueOne)+"*");
     }
     public void BtnDivisionOnClick(View v){
-        calculations();
+        valueOne = Double.parseDouble(txtInput.getText() + "");
+        div=true;
+        txtInput.setText(null);
+        txtResult.append(String.valueOf(valueOne)+"/");
+    }
+
+    public void BtnSqrtOnClick(View v){
+        valueOne = Double.parseDouble(txtInput.getText() + "");
+        sqrt=true;
+        txtInput.setText(null);
+        txtResult.append("\u221a"+ String.valueOf(valueOne));
+
+    }
+    public void BtnModulasOnClick(View v){
+
     }
 
     public void BtnEqualOnClick(View v){
-        calculations();
+        valueTwo = Double.parseDouble(txtInput.getText()+"");
+        txtResult.append(String.valueOf(valueTwo)+"=");
+        if(add == true){
+            txtInput.setText(valueOne +valueTwo+"");
+            add=false;
+        }
+        if(sub == true){
+            txtInput.setText(valueOne - valueTwo+"");
+            sub=false;
+        }
+        if(mul == true){
+            txtInput.setText(valueOne * valueTwo+"");
+            mul=false;
+        }
+        if(div == true){
+            txtInput.setText(valueOne / valueTwo+"");
+            div=false;
+        }
+        if(sqrt == true) {
+            txtInput.setText(Math.sqrt(valueOne) + "");
+            sqrt = false;
+        }
     }
-    public void BtnSignClick(View v){
-        calculations();
-    }
-    public void BtnDecimalOnClick(View v){
-        calculations();
-    }
-    public void BtnSqrtOnClick(View v){
-        calculations();
-    }
-    public void BtnModulasOnClick(View v){
-        calculations();
-    }
+
+
     public void BtnClearOnClick(View v){
-        txtInput.setText("0");
-        txtResult.setText(null);
-        valueOne = new BigDecimal("") ;
-        valueTwo = new BigDecimal("") ;
-        result = new BigDecimal("");
+        txtInput.setText("");
+        txtResult.setText("");
+        valueOne = 0 ;
+        valueTwo = 0 ;
 
     }
 
-    public void calculations(){
+    /*public void calculations(){
 
 
         switch(operator){
@@ -192,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
-    }
+    } */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
