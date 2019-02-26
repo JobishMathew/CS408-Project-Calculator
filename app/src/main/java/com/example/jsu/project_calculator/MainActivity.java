@@ -8,13 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+
+import java.text.DecimalFormat;
 import android.widget. *;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-
 public class MainActivity extends AppCompatActivity {
-
 
     private Button btnZero;
     private Button btnOne;
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         btnEqual = (Button) findViewById(R.id.btnEqual);
         btnClear = (Button) findViewById(R.id.btnClear);
 
-        txtResult = (TextView) findViewById(R.id.txtResult);
         txtInput = (TextView) findViewById(R.id.txtInput);
 
     }
@@ -212,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btnClear:
                 txtInput.setText("");
+                txtResult.setText("");
                 mul = false;
                 div = false;
                 sub = false;
@@ -225,15 +224,15 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btnModulas:
                 inputOne = Double.parseDouble(txtInput.getText().toString());
-                double temp = inputOne/100;
-                txtInput.setText(decimal.format(temp));
+                double tempOne = inputOne/100;
+                txtInput.setText(decimal.format(tempOne));
                 break;
 
             case R.id.btnSign:
                 if(!txtInput.getText().toString().equals("0")) {
                     inputOne = Double.parseDouble(txtInput.getText().toString());
-                    Double temp2 = inputOne * -1;
-                    txtInput.setText(decimal.format(temp2));
+                    double tempTwo = inputOne * -1;
+                    txtInput.setText(decimal.format(tempTwo));
                 }
                 break;
 
