@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget. *;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
     private double  valueOne;
     private double valueTwo;
-    char operator;
+    private double inputOne;
+    private double inputTwo;
+    private DecimalFormat decimal;
 
-    boolean add,sub,div,mul,sqrt,modulas;
+    boolean add,sub,div,mul;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         createObjectsVariables();
+
+        decimal = new DecimalFormat("#.##########");
         valueOne = 0;
         valueTwo = 0 ;
 
@@ -84,148 +89,187 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void btnZeroonClick(View v) {
-        txtInput.setText(txtInput.getText()+"0");
-    }
-    public void btnOneOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"1");
-    }
-    public void btnTwoOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"2");
-    }
-    public void btnThreeOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"3");
-    }
-    public void btnFourOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"4");
-    }
-    public void btnFiveOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"5");
-    }
-    public void btnSixOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"6");
-    }
-    public void btnSevenOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"7");
-    }
-    public void btnEightOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"8");
-    }
-    public void btnNineOnClick(View v) {
-        txtInput.setText(txtInput.getText()+"9");
-    }
-    public void BtnDecimalOnClick(View v){
-        txtInput.setText(txtInput.getText()+".");
-
-    }
-    public void BtnSignClick(View v){
-
-    }
-
-    //Caluclation Buttons.
-    public void BtnAdditoinOnClick(View v){
-        valueOne = Double.parseDouble(txtInput.getText() + "");
-        add=true;
-        txtInput.setText(null);
-        txtResult.append(String.valueOf(valueOne)+ "+");
-    }
-    public void BtnSubtractionOnClick(View v){
-        valueOne = Double.parseDouble(txtInput.getText() + "");
-        sub=true;
-        txtInput.setText(null);
-        txtResult.append(String.valueOf(valueOne)+"-");
-    }
-    public void BtnMultiplicationOnClick(View v){
-        valueOne = Double.parseDouble(txtInput.getText() + "");
-        mul=true;
-        txtInput.setText(null);
-        txtResult.append(String.valueOf(valueOne)+"*");
-    }
-    public void BtnDivisionOnClick(View v){
-        valueOne = Double.parseDouble(txtInput.getText() + "");
-        div=true;
-        txtInput.setText(null);
-        txtResult.append(String.valueOf(valueOne)+"/");
-    }
-
-    public void BtnSqrtOnClick(View v){
-        valueOne = Double.parseDouble(txtInput.getText() + "");
-        sqrt=true;
-        txtInput.setText(null);
-        txtResult.append("\u221a"+ String.valueOf(valueOne));
-
-    }
-    public void BtnModulasOnClick(View v){
-
-    }
-
-    public void BtnEqualOnClick(View v){
-        valueTwo = Double.parseDouble(txtInput.getText()+"");
-        txtResult.append(String.valueOf(valueTwo)+"=");
-        if(add == true){
-            txtInput.setText(valueOne +valueTwo+"");
-            add=false;
-        }
-        if(sub == true){
-            txtInput.setText(valueOne - valueTwo+"");
-            sub=false;
-        }
-        if(mul == true){
-            txtInput.setText(valueOne * valueTwo+"");
-            mul=false;
-        }
-        if(div == true){
-            txtInput.setText(valueOne / valueTwo+"");
-            div=false;
-        }
-        if(sqrt == true) {
-            txtInput.setText(Math.sqrt(valueOne) + "");
-            sqrt = false;
-        }
-    }
-
-
-    public void BtnClearOnClick(View v){
-        txtInput.setText("");
-        txtResult.setText("");
-        valueOne = 0 ;
-        valueTwo = 0 ;
-
-    }
-
-    /*public void calculations(){
-
-
-        switch(operator){
-            case ADDITION:
-                valueOne = valueOne.add(valueTwo);
-                txtResult.setText(valueOne.toString());
-                txtInput.setText(Character.toString(ADDITION));
+    public void Onlclick(View view)
+    {
+        switch(view.getId()){
+            case R.id.btn0:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnZero.getText().toString());
+                }
+                else {
+                    txtInput.append(btnZero.getText().toString());
+                }
                 break;
-            case SUBTRACTION:
-                valueOne = valueOne.subtract(valueTwo);
-                txtResult.setText(valueOne.toString());;
-                txtInput.setText(Character.toString(SUBTRACTION));
+            case R.id.btn1:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnOne.getText().toString());
+                }
+                else {
+                    txtInput.append(btnOne.getText().toString());
+                }
                 break;
-            case MULTIPLICATION:
-                valueOne = valueOne.multiply(valueTwo);
-                txtResult.setText(valueOne.toString());
-                txtInput.setText(Character.toString(MULTIPLICATION));
+            case R.id.btn2:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnTwo.getText().toString());
+                }
+                else {
+                    txtInput.append(btnTwo.getText().toString());
+                }
                 break;
-            case DIVISION:
-                valueOne = valueOne.divide(valueTwo);
-                txtResult.setText(valueOne.toString());
-                txtInput.setText(Character.toString(DIVISION));
+            case R.id.btn3:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnThree.getText().toString());
+                }
+                else {
+                    txtInput.append(btnThree.getText().toString());
+                }
                 break;
-            case EQUAL:
-                txtResult.setText(valueOne.toString());
-                txtInput.setText(null);
+            case R.id.btn4:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnFour.getText().toString());
+                }
+                else {
+                    txtInput.append(btnFour.getText().toString());
+                }
                 break;
-            default:
+            case R.id.btn5:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnFive.getText().toString());
+                }
+                else {
+                    txtInput.append(btnFive.getText().toString());
+                }
                 break;
-        }
-    } */
+            case R.id.btn6:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnSix.getText().toString());
+                }
+                else {
+                    txtInput.append(btnSix.getText().toString());
+                }
+                break;
+            case R.id.btn7:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnSeven.getText().toString());
+                }
+                else {
+                    txtInput.append(btnSeven.getText().toString());
+                }
+                break;
+            case R.id.btn8:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnEight.getText().toString());
+                }
+                else {
+                    txtInput.append(btnEight.getText().toString());
+                }
+                break;
+            case R.id.btn9:
+                if(txtInput.getText().toString().equals("0")) {
+                    txtInput.setText(btnNine.getText().toString());
+                }
+                else {
+                    txtInput.append(btnNine.getText().toString());
+                }
+                break;
+            case R.id.btnDecimal:
+                if(!txtInput.getText().toString().contains("."))
+                    txtInput.setText(txtInput.getText()+".");
+                break;
 
+            case R.id.btnAdd:
+                if(!(mul | div | add | sub)) {
+                    inputOne = Double.parseDouble(txtInput.getText().toString());
+                    valueOne = inputOne;
+                    add = true;
+                    txtInput.setText("");
+                }
+                break;
+            case R.id.btnSub:
+                if(!(mul | div | add | sub)) {
+                    inputOne = Double.parseDouble(txtInput.getText().toString());
+                    valueOne = inputOne;
+                    div = true;
+                    txtInput.setText("");
+                }
+                break;
+            case R.id.btnMulty:
+                if(!(mul | div | add | sub)) {
+                    inputOne = Double.parseDouble(txtInput.getText().toString());
+                    valueOne = inputOne;
+                    mul = true;
+                    txtInput.setText("");
+                }
+                break;
+            case R.id.btnDiv:
+                if(!(mul | div | add | sub)) {
+                    inputOne = Double.parseDouble(txtInput.getText().toString());
+                    valueOne = inputOne;
+                    div = true;
+                    txtInput.setText("");
+                }
+                break;
+
+            case R.id.btnClear:
+                txtInput.setText("");
+                mul = false;
+                div = false;
+                sub = false;
+                add = false;
+                break;
+
+            case R.id.btnSqrt:
+                inputOne = Math.sqrt(Double.parseDouble(txtInput.getText().toString()));
+                txtInput.setText(decimal.format(inputOne ));
+                break;
+
+            case R.id.btnModulas:
+                inputOne = Double.parseDouble(txtInput.getText().toString());
+                double temp = inputOne/100;
+                txtInput.setText(decimal.format(temp));
+                break;
+
+            case R.id.btnSign:
+                if(!txtInput.getText().toString().equals("0")) {
+                    inputOne = Double.parseDouble(txtInput.getText().toString());
+                    Double temp2 = inputOne * -1;
+                    txtInput.setText(decimal.format(temp2));
+                }
+                break;
+
+            case R.id.btnEqual:
+                inputTwo = Double.parseDouble(txtInput.getText().toString());
+                valueTwo = inputTwo;
+
+                if(add){
+                    double addSolution = (valueOne + valueTwo);
+                    txtInput.setText(decimal.format(addSolution));
+                    add = false;
+                }
+
+                if(sub){
+                    double subSolution = (valueOne - valueTwo);
+                    txtInput.setText(decimal.format(subSolution));
+                    sub = false;
+                }
+
+                if(mul){
+                    double mulSolution = (valueOne * valueTwo);
+                    txtInput.setText(decimal.format(mulSolution));
+                    mul = false;
+                }
+
+                if(div){
+                    double divSolution = (valueOne / valueTwo);
+                    txtInput.setText(decimal.format(divSolution));
+                    div = false;
+                }
+
+                break;
+
+
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

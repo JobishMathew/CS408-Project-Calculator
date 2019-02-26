@@ -40,259 +40,301 @@
         android:id="@+id/btn7"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnSevenOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn7"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn4"
         app:layout_constraintEnd_toStartOf="@+id/btn8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInput"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn8"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnEightOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn8"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn5"
         app:layout_constraintEnd_toStartOf="@+id/btn9"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn7"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInput"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn9"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnNineOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn9"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn6"
         app:layout_constraintEnd_toStartOf="@+id/btnSqrt"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn8"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInput"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnSqrt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnSqrtOnClick"
+        android:onClick="Onlclick"
         android:text="@string/sqrt"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnDiv"
         app:layout_constraintEnd_toStartOf="@+id/btnClear"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn9"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInput"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnClear"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnClearOnClick"
+        android:onClick="Onlclick"
         android:text="@string/clear"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnModulas"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnSqrt"
-        app:layout_constraintTop_toBottomOf="@+id/txtInput" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInput"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnFourOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn4"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn1"
         app:layout_constraintEnd_toStartOf="@+id/btn5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/btn7" />
+        app:layout_constraintTop_toBottomOf="@+id/btn7"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnFiveOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn5"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn2"
         app:layout_constraintEnd_toStartOf="@+id/btn6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn4"
-        app:layout_constraintTop_toBottomOf="@+id/btn8" />
+        app:layout_constraintTop_toBottomOf="@+id/btn8"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnSixOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn6"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn3"
         app:layout_constraintEnd_toStartOf="@+id/btnMulty"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn5"
-        app:layout_constraintTop_toBottomOf="@+id/btn9" />
+        app:layout_constraintTop_toBottomOf="@+id/btn9"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnOneOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn1"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnSign"
         app:layout_constraintEnd_toStartOf="@+id/btn2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/btn4" />
+        app:layout_constraintTop_toBottomOf="@+id/btn4"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnSign"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:textStyle="bold"
+        android:onClick="Onlclick"
         android:text="@string/btnSign"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/btn0"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn0"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnZeroonClick"
+        android:onClick="Onlclick"
         android:text="@string/btn0"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/btnDecimal"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnSign"
-        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn2"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnDecimal"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnDecimalOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btnDecimal"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn0"
-        app:layout_constraintTop_toBottomOf="@+id/btn3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnAdditoinOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btnAdd"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/btnEqual"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/btnMulty" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMulty"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnEqual"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnEqualOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btnEqual"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnAdd"
-        app:layout_constraintTop_toBottomOf="@+id/btnSub" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSub"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnTwoOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn2"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn0"
         app:layout_constraintEnd_toStartOf="@+id/btn3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toBottomOf="@+id/btn5" />
+        app:layout_constraintTop_toBottomOf="@+id/btn5"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btn3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="btnThreeOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btn3"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnDecimal"
         app:layout_constraintEnd_toStartOf="@+id/btnMulty"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn2"
-        app:layout_constraintTop_toBottomOf="@+id/btn6" />
+        app:layout_constraintTop_toBottomOf="@+id/btn6"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnMulty"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnMultiplicationOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btnMultiply"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnAdd"
         app:layout_constraintEnd_toStartOf="@+id/btnSub"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn6"
-        app:layout_constraintTop_toBottomOf="@+id/btnDiv" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDiv"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnSub"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnSubtractionOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btnSubtract"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnEqual"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnMulty"
-        app:layout_constraintTop_toBottomOf="@+id/btnModulas" />
+        app:layout_constraintTop_toBottomOf="@+id/btnModulas"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnDiv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="BtnDivisionOnClick"
+        android:onClick="Onlclick"
         android:text="@string/btnDiv"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnMulty"
         app:layout_constraintEnd_toStartOf="@+id/btnModulas"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btn6"
-        app:layout_constraintTop_toBottomOf="@+id/btnSqrt" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSqrt"
+        tools:padding="0dp" />
 
     <Button
         android:id="@+id/btnModulas"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="Onlclick"
         android:text="@string/btnModulas"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnSub"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnDiv"
-        app:layout_constraintTop_toBottomOf="@+id/btnClear" />
+        app:layout_constraintTop_toBottomOf="@+id/btnClear"
+        tools:padding="0dp" />
 
     <TextView
         android:id="@+id/txtResult"
